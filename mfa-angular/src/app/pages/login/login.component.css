@@ -47,11 +47,6 @@ button {
     margin-bottom: 10px;
 }
 
-a {
-    margin-top: 10px;
-    display: block;
-}
-
 button:hover {
     background-color: #0056b3;
 }

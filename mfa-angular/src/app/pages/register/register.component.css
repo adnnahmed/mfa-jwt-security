@@ -12,26 +12,29 @@ h2 {
 }
 
 form {
-    text-align: center;
+    text-align: left;
 }
 
 .form-group {
     margin-bottom: 15px;
-    text-align: center;
 }
 
 .form-group label {
-    display: inline-block;  /* Allow the label to behave like an inline element */
-    text-align: center;     /* Center the label text */
-    margin-bottom: 10px;
-    color: #555;
-}
-
-label {
-    display: block;
+    display: block;  /* Allow the label to behave like an inline element */
     margin-bottom: 5px;
     color: #555;
     text-align: left;
+}
+
+.text-form {
+    margin-bottom: 15px;
+}
+
+.text-form label {
+    display: block;  /* Allow the label to behave like an inline element */
+    margin-bottom: 5px;
+    color: #555;
+    text-align: center;
 }
 
 input[type="text"],
@@ -63,11 +66,6 @@ button {
     border-radius: 4px;
     cursor: pointer;
     margin-bottom: 10px;
-}
-
-a {
-    margin-top: 10px;
-    display: block;
 }
 
 button:hover {
@@ -111,7 +109,7 @@ button:hover {
     display: flex;
     align-items: center;
     /* Aligns the checkbox and text vertically */
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
     /* Adds space between the checkbox and the text */
     margin-bottom: 20px;
@@ -169,4 +167,5 @@ button:hover {
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 10px;
+    text-align: center;
 }
