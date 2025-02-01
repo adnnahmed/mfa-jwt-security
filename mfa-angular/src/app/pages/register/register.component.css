@@ -17,6 +17,14 @@ form {
 
 .form-group {
     margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-group label {
+    display: inline-block;  /* Allow the label to behave like an inline element */
+    text-align: center;     /* Center the label text */
+    margin-bottom: 10px;
+    color: #555;
 }
 
 label {

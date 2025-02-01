@@ -42,7 +42,7 @@ export class RegisterComponent {
           if (error.status === 403) {
             this.errorMessage = 'An error occurred. Please try again.';
             setTimeout(() => {
-              this.router.navigate(['register']);
+              this.errorMessage = '';
             }, 3000)
           }
         }
