@@ -16,6 +16,7 @@ export class LoginComponent {
   authRequest: AuthenticationRequest = {};
   otpCode: any;
   authResponse: AuthenticationResponse = {};
+  errorMessage: string = '';
 
   constructor(
     private authService: AuthenticationService,
@@ -28,9 +29,17 @@ export class LoginComponent {
       .subscribe({
         next: (response) => {
           this.authResponse = response;
+          this.errorMessage = '';
           if (!this.authResponse.mfaEnabled) {
             localStorage.setItem('token', response.accessToken as string);
             this.router.navigate(['welcome']);
+          }
+        },
+        error: (error) => {
+          if (error.status === 403) {
+            this.errorMessage = 'Access denied. Please check your credentials or contact support.';
+          } else {
+            this.errorMessage = 'An error occurred. Please try again.';
           }
         }
       })

@@ -44,10 +44,12 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 a {
     margin-top: 10px;
+    display: block;
 }
 
 button:hover {
@@ -61,3 +63,33 @@ button:hover {
     opacity: 0.6;
     pointer-events: none;
 }
+
+.error-message {
+    color: rgb(235, 74, 74);
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+  .register-link {
+    text-align: center;
+    margin-top: 15px; /* Adds space between the login button and the link */
+    font-size: 14px; /* Adjusts the font size */
+    color: #555; /* Neutral text color for the message */
+  }
+  
+  .register-link span {
+    margin-right: 5px; /* Adds a small gap between the text and the link */
+  }
+  
+  .register-link a {
+    color: #007bff; /* Matches the blue theme of the button */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Makes the link stand out */
+  }
+  
+  .register-link a:hover {
+    text-decoration: underline; /* Adds underline on hover for better interactivity */
+    color: #0056b3; /* Darkens the link color on hover */
+  }
+  

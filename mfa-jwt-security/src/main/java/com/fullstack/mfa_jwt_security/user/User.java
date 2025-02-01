@@ -2,6 +2,8 @@ package com.fullstack.mfa_jwt_security.user;
 
 import com.fullstack.mfa_jwt_security.token.Token;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,9 +25,14 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue
     private Integer id;
+    @NotEmpty(message = "First Name cannot be empty")
     private String firstname;
+    @NotEmpty(message = "Last Name cannot be empty")
     private String lastname;
+    @Email(message = "Email is not valid", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
+    @NotEmpty(message = "Email cannot be empty")
     private String email;
+    @NotEmpty(message = "Password cannot be empty")
     private String password;
     private boolean mfaEnabled;
     private String secret;

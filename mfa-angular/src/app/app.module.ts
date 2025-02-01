@@ -8,6 +8,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    HttpClient
+    HttpClient,
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

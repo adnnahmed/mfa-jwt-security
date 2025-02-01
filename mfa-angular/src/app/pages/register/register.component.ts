@@ -17,6 +17,7 @@ export class RegisterComponent {
   authResponse: AuthenticationResponse = {};
   message = '';
   otpCode = '';
+  errorMessage = '';
 
   constructor(
     private authService: AuthenticationService,
@@ -31,9 +32,17 @@ export class RegisterComponent {
           if (response) {
             this.authResponse = response;
           } else {
-            this.message = 'Account created successfuly\nYou will be redirected to the Login page in 3 seconds.';
+            this.message = 'Account created successfuly.';
             setTimeout(() => {
               this.router.navigate(['login']);
+            }, 3000)
+          }
+        },
+        error: (error) => {
+          if (error.status === 403) {
+            this.errorMessage = 'An error occurred. Please try again.';
+            setTimeout(() => {
+              this.router.navigate(['register']);
             }, 3000)
           }
         }
@@ -49,7 +58,7 @@ export class RegisterComponent {
     this.authService.verifyCode(verifyRequest)
       .subscribe({
         next: (response) => {
-          this.message = 'Account created successfully\nYou will be redirected to the Welcome page in 3 seconds.';
+          this.message = 'Account created successfully.';
           setTimeout(() => {
             localStorage.setItem('token', response.accessToken as string);
             this.router.navigate(['welcome']);
