@@ -63,6 +63,14 @@ export class RegisterComponent {
             localStorage.setItem('token', response.accessToken as string);
             this.router.navigate(['welcome']);
           }, 3000)
+        },
+        error: (error) => {
+          if (error.status === 403) {
+            this.errorMessage = 'An error occurred. Please try again.';
+            setTimeout(() => {
+              this.errorMessage = '';
+            }, 3000)
+          }
         }
       })
   }

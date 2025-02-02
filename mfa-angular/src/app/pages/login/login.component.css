@@ -4,7 +4,7 @@ body {
     align-items: center; 
 }
 
-.container {
+/* .container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -25,16 +25,15 @@ form {
 
 .form-group {
     margin-bottom: 15px;
-}
+} */
 
-.form-group label {
+/* .form-group label {
     display: block;
-    /* Allow the label to behave like an inline element */
     margin-bottom: 5px;
     color: #555;
     text-align: left;
     font-size: 12px;
-}
+} */
 
 /* form {
     text-align: center;
@@ -52,16 +51,16 @@ label {
     font-size: large;
 } */
 
-input[type="text"],
+/* input[type="text"],
 input[type="password"] {
     width: 93%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
+} */
 
-button {
+/* button {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
@@ -71,13 +70,13 @@ button {
     border-radius: 4px;
     cursor: pointer;
     margin-bottom: 10px;
-}
+} */
 
-button:hover {
-    background-color: #0056b3;
-}
+/* button:hover {
+    background-color: #cde1f7;
+} */
 
-.button-disabled {
+/* .button-disabled {
     background-color: #cccccc;
     color: #777777;
     cursor: not-allowed;
@@ -89,33 +88,24 @@ button:hover {
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
-    /* Adds space between the register button and the link */
     font-size: 14px;
-    /* Adjusts the font size */
     color: #555;
-    /* Neutral text color for the message */
 }
 
 .register-link span {
     margin-right: 5px;
-    /* Adds a small gap between the text and the link */
 }
 
 .register-link a {
     color: #007bff;
-    /* Matches the blue theme of the button */
     text-decoration: none;
-    /* Removes underline */
     font-weight: bold;
-    /* Makes the link stand out */
 }
 
 .register-link a:hover {
     text-decoration: underline;
-    /* Adds underline on hover for better interactivity */
     color: #0056b3;
-    /* Darkens the link color on hover */
-}
+} */
 
 .error-message {
     position: relative;
@@ -127,4 +117,67 @@ button:hover {
     margin-bottom: 10px;
     text-align: center;
     display: block;
+}
+
+.centered-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.login-card {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+button.mat-raised-button {
+    font-size: 16px;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.mfa-card {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    margin-top: 10px;
 }

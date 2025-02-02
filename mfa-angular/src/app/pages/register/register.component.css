@@ -4,7 +4,7 @@ body {
     align-items: center; 
 }
 
-.container {
+/* .container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -12,7 +12,6 @@ body {
     width: fit-content;
     min-width: 260px;
     min-height: 400px;
-    /* Reserve space for the error message */
 }
 
 h2 {
@@ -31,7 +30,6 @@ form {
 
 .form-group label {
     display: block;
-    /* Allow the label to behave like an inline element */
     margin-bottom: 5px;
     color: #555;
     text-align: left;
@@ -44,7 +42,6 @@ form {
 
 .text-form label {
     display: block;
-    /* Allow the label to behave like an inline element */
     margin-bottom: 5px;
     color: #555;
     text-align: center;
@@ -99,21 +96,17 @@ button:hover {
     margin-top: 20px;
 }
 
-/* Main success message */
 .success-message {
     font-size: 12px;
     font-weight: bold;
     color: #155724;
-    /* Dark green for emphasis */
 }
 
 .checkbox-group {
     display: flex;
     align-items: center;
-    /* Aligns the checkbox and text vertically */
     justify-content: flex-start;
     gap: 10px;
-    /* Adds space between the checkbox and the text */
     margin-bottom: 20px;
 }
 
@@ -121,54 +114,39 @@ button:hover {
     width: 20px;
     height: 20px;
     margin: 0;
-    /* Removes extra margins around the checkbox */
 }
 
 .checkbox-group label {
     margin: 0;
-    /* Ensures no extra space around the label */
     font-size: 14px;
-    /* Adjusts the font size for better readability */
     color: #555;
-    /* Keeps consistent text color */
 }
 
 .login-link {
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
-    /* Adds space between the register button and the link */
     font-size: 14px;
-    /* Adjusts the font size */
     color: #555;
-    /* Neutral text color for the message */
 }
 
 .login-link span {
     margin-right: 5px;
-    /* Adds a small gap between the text and the link */
 }
 
 .login-link a {
     color: #007bff;
-    /* Matches the blue theme of the button */
     text-decoration: none;
-    /* Removes underline */
     font-weight: bold;
-    /* Makes the link stand out */
 }
 
 .login-link a:hover {
     text-decoration: underline;
-    /* Adds underline on hover for better interactivity */
     color: #0056b3;
-    /* Darkens the link color on hover */
 }
 
 .error-message {
     position: relative;
-    /* Take it out of the normal flow */
-    /* Adjust this to your liking */
     left: 0;
     right: 0;
     color: rgb(235, 74, 74);
@@ -177,5 +155,110 @@ button:hover {
     margin-bottom: 10px;
     text-align: center;
     display: block;
-    /* Ensure it's part of the normal flow */
+} */
+
+/* .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto; 
+    min-height: 400px;
+} */
+
+.success-message-panel {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.success-message {
+    font-weight: bold;
+    color: #155724;
+    margin-bottom: 10px;
+}
+
+.centered-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.register-card {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+button.mat-raised-button {
+    font-size: 16px;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-link a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    position: relative;
+    left: 0;
+    right: 0;
+    color: rgb(235, 74, 74);
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: block;
+}
+
+.mfa-card {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-code {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.qr-code img {
+    max-width: 100%;
+    border: solid 1px;
+}
+
+.button-disabled {
+    background-color: #ccc;
+    color: #777;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
 }
