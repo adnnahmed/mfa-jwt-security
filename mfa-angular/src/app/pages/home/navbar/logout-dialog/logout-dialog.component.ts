@@ -13,12 +13,12 @@ export class LogoutDialogComponent {
   constructor(public dialogRef: MatDialogRef<LogoutDialogComponent>) { }
 
   onCancel(): void {
-    this.dialogRef.close();
+    this.dialogRef.close('cancel');
   }
 
   onConfirm(): void {
     // Call the logout functionality here, e.g., clearing tokens, redirecting, etc.
-    console.log('Logged out');
-    this.dialogRef.close();
+    // console.log('Logged out');
+    this.dialogRef.close('logout');
   }
 }

@@ -32,7 +32,7 @@ export class LoginComponent {
           this.errorMessage = '';
           if (!this.authResponse.mfaEnabled) {
             localStorage.setItem('token', response.accessToken as string);
-            this.router.navigate(['welcome']);
+            this.router.navigate(['home']);
           }
         },
         error: (error) => {
@@ -60,7 +60,7 @@ export class LoginComponent {
       .subscribe({
         next: (response) => {
           localStorage.setItem('token', response.accessToken as string);
-          this.router.navigate(['welcome']);
+          this.router.navigate(['home']);
         },
         error: (error) => {
           if (error.status === 403) {

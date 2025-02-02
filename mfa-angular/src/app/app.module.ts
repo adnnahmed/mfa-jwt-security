@@ -30,6 +30,7 @@ import { EmployeeListComponent } from './pages/home/navbar/features/employee-lis
 import { DashboardComponent } from './pages/home/navbar/features/dashboard/dashboard.component';
 import { NavbarComponent } from './pages/home/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
+import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { CommonModule } from '@angular/common';
   ],
   providers: [
     HttpClient,
+    AuthenticationService,
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]

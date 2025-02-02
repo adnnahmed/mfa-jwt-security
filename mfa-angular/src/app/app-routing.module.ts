@@ -28,10 +28,22 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [authGuard]
   },
-  { path: 'create-employee', component: CreateEmployeeComponent },
-  { path: 'employee-list', component: EmployeeListComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
+  { path: 'create-employee', 
+    component: CreateEmployeeComponent,
+    canActivate: [authGuard]
+  },
+  { path: 'employee-list', 
+    component: EmployeeListComponent,
+    canActivate: [authGuard]
+  },
+  { path: 'dashboard', 
+    component: DashboardComponent,
+    canActivate: [authGuard]
+  },
+  { path: '', 
+    redirectTo: '/home', 
+    pathMatch: 'full' 
+  }
 ];
 
 @NgModule({
