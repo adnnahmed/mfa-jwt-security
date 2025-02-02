@@ -1,14 +1,24 @@
+body { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
 .container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    width: 500px;
+    width: fit-content;
+    min-width: 260px;
+    min-height: 400px;
+    /* Reserve space for the error message */
 }
 
 h2 {
     text-align: center;
     color: #333;
+    font-size: 14px;
 }
 
 form {
@@ -20,10 +30,12 @@ form {
 }
 
 .form-group label {
-    display: block;  /* Allow the label to behave like an inline element */
+    display: block;
+    /* Allow the label to behave like an inline element */
     margin-bottom: 5px;
     color: #555;
     text-align: left;
+    font-size: 12px;
 }
 
 .text-form {
@@ -31,10 +43,12 @@ form {
 }
 
 .text-form label {
-    display: block;  /* Allow the label to behave like an inline element */
+    display: block;
+    /* Allow the label to behave like an inline element */
     margin-bottom: 5px;
     color: #555;
     text-align: center;
+    font-size: 12px;
 }
 
 input[type="text"],
@@ -60,7 +74,7 @@ button {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
-    color: #fff;
+    color: #ffffff;
     font-size: 16px;
     border: none;
     border-radius: 4px;
@@ -72,7 +86,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Style for a disabled button */
 .button-disabled {
     background-color: #ccc;
     color: #777;
@@ -88,21 +101,10 @@ button:hover {
 
 /* Main success message */
 .success-message {
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
     color: #155724;
     /* Dark green for emphasis */
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
 
 .checkbox-group {
@@ -134,6 +136,7 @@ button:hover {
 .login-link {
     text-align: center;
     margin-top: 15px;
+    margin-bottom: 10px;
     /* Adds space between the register button and the link */
     font-size: 14px;
     /* Adjusts the font size */
@@ -163,9 +166,16 @@ button:hover {
 }
 
 .error-message {
+    position: relative;
+    /* Take it out of the normal flow */
+    /* Adjust this to your liking */
+    left: 0;
+    right: 0;
     color: rgb(235, 74, 74);
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px;
     text-align: center;
+    display: block;
+    /* Ensure it's part of the normal flow */
 }

@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <span>My App</span>
+
+    <!-- Left-aligned buttons -->
+    <button mat-button routerLink="/create-employee">Create Employee</button>
+    <button mat-button routerLink="/employee-list">Employee List</button>
+    <button mat-button routerLink="/dashboard">Dashboard</button>
+
+    <!-- Right-aligned logout button -->
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="openLogoutDialog()">
+        <mat-icon>exit_to_app</mat-icon>
+    </button>
+</mat-toolbar>

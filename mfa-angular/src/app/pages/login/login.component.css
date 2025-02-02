@@ -1,17 +1,42 @@
+body { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
 .container {
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: fit-content;
+    min-width: 260px;
 }
 
 h2 {
     text-align: center;
-    color: #333333;
+    color: #333;
+    font-size: 14px;
 }
 
 form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    /* Allow the label to behave like an inline element */
+    margin-bottom: 5px;
+    color: #555;
+    text-align: left;
+    font-size: 12px;
+}
+
+/* form {
     text-align: center;
 }
 
@@ -24,14 +49,15 @@ label {
     margin-bottom: 5px;
     color: #555555;
     text-align: left;
-}
+    font-size: large;
+} */
 
 input[type="text"],
 input[type="password"] {
     width: 93%;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
     border-radius: 4px;
 }
 
@@ -59,32 +85,46 @@ button:hover {
     pointer-events: none;
 }
 
-.error-message {
-    color: rgb(235, 74, 74);
-    font-weight: bold;
-    margin-top: 10px;
+.register-link {
+    text-align: center;
+    margin-top: 15px;
     margin-bottom: 10px;
+    /* Adds space between the register button and the link */
+    font-size: 14px;
+    /* Adjusts the font size */
+    color: #555;
+    /* Neutral text color for the message */
 }
 
-  .register-link {
+.register-link span {
+    margin-right: 5px;
+    /* Adds a small gap between the text and the link */
+}
+
+.register-link a {
+    color: #007bff;
+    /* Matches the blue theme of the button */
+    text-decoration: none;
+    /* Removes underline */
+    font-weight: bold;
+    /* Makes the link stand out */
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+    /* Adds underline on hover for better interactivity */
+    color: #0056b3;
+    /* Darkens the link color on hover */
+}
+
+.error-message {
+    position: relative;
+    left: 0;
+    right: 0;
+    color: rgb(235, 74, 74);
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 10px;
     text-align: center;
-    margin-top: 15px; /* Adds space between the login button and the link */
-    font-size: 14px; /* Adjusts the font size */
-    color: #555; /* Neutral text color for the message */
-  }
-  
-  .register-link span {
-    margin-right: 5px; /* Adds a small gap between the text and the link */
-  }
-  
-  .register-link a {
-    color: #007bff; /* Matches the blue theme of the button */
-    text-decoration: none; /* Removes underline */
-    font-weight: bold; /* Makes the link stand out */
-  }
-  
-  .register-link a:hover {
-    text-decoration: underline; /* Adds underline on hover for better interactivity */
-    color: #0056b3; /* Darkens the link color on hover */
-  }
-  
+    display: block;
+}

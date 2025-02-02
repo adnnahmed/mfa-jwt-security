@@ -1,0 +1,8 @@
+/* Align logout button to the far right */
+.spacer {
+    flex: 1 1 auto;
+}
+
+.content {
+    margin-top: 20px;
+}

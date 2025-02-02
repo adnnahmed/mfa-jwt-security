@@ -1,0 +1,25 @@
+/* Ensure the toolbar spans the full width of the page */
+mat-toolbar.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    /* Add padding for better spacing */
+    box-sizing: border-box;
+    /* Ensure padding is included in the width */
+}
+
+mat-toolbar .spacer {
+    flex: 1 1 auto;
+    /* Push logout button to the right */
+}
+
+button {
+    margin-left: 10px;
+    /* Add spacing between the buttons */
+}
+
+/* Style the content area */
+.content {
+    margin-top: 20px;
+}

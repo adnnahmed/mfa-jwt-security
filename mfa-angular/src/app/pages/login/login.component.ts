@@ -38,8 +38,14 @@ export class LoginComponent {
         error: (error) => {
           if (error.status === 403) {
             this.errorMessage = 'Access denied. Please check your credentials or contact support.';
+            setTimeout(() => {
+              this.errorMessage = '';
+            }, 3000)
           } else {
             this.errorMessage = 'An error occurred. Please try again.';
+            setTimeout(() => {
+              this.errorMessage = '';
+            }, 3000)
           }
         }
       })
@@ -55,6 +61,19 @@ export class LoginComponent {
         next: (response) => {
           localStorage.setItem('token', response.accessToken as string);
           this.router.navigate(['welcome']);
+        },
+        error: (error) => {
+          if (error.status === 403) {
+            this.errorMessage = 'Access denied. Please check Validation Code.';
+            setTimeout(() => {
+              this.errorMessage = '';
+            }, 3000)
+          } else {
+            this.errorMessage = 'An error occurred. Please try again.';
+            setTimeout(() => {
+              this.errorMessage = '';
+            }, 3000)
+          }
         }
       })
   }
