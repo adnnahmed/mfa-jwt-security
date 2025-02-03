@@ -1,8 +1,8 @@
-body { 
+/* body { 
     display: flex; 
     justify-content: center; 
     align-items: center; 
-}
+} */
 
 /* .container {
     background-color: #fff;
@@ -168,7 +168,7 @@ button:hover {
     min-height: 400px;
 } */
 
-.success-message-panel {
+/* .success-message-panel {
     text-align: center;
     margin-bottom: 10px;
 }
@@ -183,19 +183,22 @@ button:hover {
     text-align: center;
     font-weight: bold;
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .register-card {
     max-width: 400px;
     margin: 50px auto;
-    padding: 20px;
+    max-height: max-content;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-mat-form-field {
+.form-group {
     width: 100%;
 }
 
@@ -243,6 +246,97 @@ button.mat-raised-button {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.qr-code {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.qr-code img {
+    max-width: 100%;
+    border: solid 1px;
+}
+
+.button-disabled {
+    background-color: #ccc;
+    color: #777;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+} */
+
+body {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.error-message {
+    position: relative;
+    left: 0;
+    right: 0;
+    color: rgb(235, 74, 74);
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: block;
+}
+
+.centered-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.card {
+    max-width: 400px;
+    margin: 50px auto;
+    max-height: max-content;
+    padding: 20px; /* Unified padding for all cards */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+button.mat-raised-button {
+    font-size: 16px;
+}
+
+.register-link,
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link a,
+.login-link a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.register-link a:hover,
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.mfa-card {
+    padding: 20px; /* Unified padding for MFA card */
 }
 
 .qr-code {
