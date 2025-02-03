@@ -61,7 +61,7 @@ export class RegisterComponent {
           this.message = 'Account created successfully.';
           setTimeout(() => {
             localStorage.setItem('token', response.accessToken as string);
-            this.router.navigate(['welcome']);
+            this.router.navigate(['home']);
           }, 3000)
         },
         error: (error) => {
