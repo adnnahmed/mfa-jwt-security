@@ -168,18 +168,7 @@ button:hover {
     min-height: 400px;
 } */
 
-/* .success-message-panel {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.success-message {
-    font-weight: bold;
-    color: #155724;
-    margin-bottom: 10px;
-}
-
-.centered-title {
+/* .centered-title {
     text-align: center;
     font-weight: bold;
     font-size: 1.5rem;
@@ -277,6 +266,23 @@ body {
     left: 0;
     right: 0;
     color: rgb(235, 74, 74);
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: block;
+}
+
+/* .success-message-panel {
+    text-align: center;
+    margin-bottom: 10px;
+} */
+
+.success-message {
+    position: relative;
+    left: 0;
+    right: 0;
+    color: #155724;
     font-weight: bold;
     margin-top: 0px;
     margin-bottom: 10px;

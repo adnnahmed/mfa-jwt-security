@@ -73,8 +73,10 @@ public class AuthenticationService {
                         request.getPassword()
                 )
         );
+
         User user = userRepository.findByEmail(request.getEmail())
-                .orElseThrow();
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
         if (user.isMfaEnabled()) {
             return AuthenticationResponse.builder()
                     .accessToken("")
@@ -82,6 +84,7 @@ public class AuthenticationService {
                     .mfaEnabled(true)
                     .build();
         }
+
         String jwtToken = jwtService.generateToken(user);
         String refreshToken = jwtService.generateRefreshToken(user);
         revokeAllUserTokens(user);

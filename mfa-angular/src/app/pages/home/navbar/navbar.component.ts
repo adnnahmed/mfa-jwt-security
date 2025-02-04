@@ -1,8 +1,9 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LogoutDialogComponent } from './logout-dialog/logout-dialog.component';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { Route, Router } from '@angular/router';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,8 +18,13 @@ export class NavbarComponent {
   constructor(
     private dialog: MatDialog,
     private router: Router,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private userService: UserService
   ) {}
+
+  isAdminOrManager(): boolean {
+    return this.userService.hasRole('ADMIN') || this.userService.hasRole('MANAGER');
+  }
 
   openLogoutDialog(): void {
     const dialogRef = this.dialog.open(LogoutDialogComponent);

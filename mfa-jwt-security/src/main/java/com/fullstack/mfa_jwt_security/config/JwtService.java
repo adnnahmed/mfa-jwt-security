@@ -25,6 +25,10 @@ public class JwtService {
     @Value("${application.security.jwt.refresh-token.expiration}")
     private long refreshExpiration;
 
+    public String extractRole(String token) {
+        return extractClaim(token, claims -> claims.get("role", String.class));  // or use "roles" if that's what it's called
+    }
+
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
@@ -42,6 +46,15 @@ public class JwtService {
             Map<String, Object> extraClaims,
             UserDetails userDetails
     ) {
+        String role = userDetails.getAuthorities().stream()
+                .filter(authority -> authority.getAuthority().startsWith("ROLE_"))
+                .findFirst()
+                .map(authority -> authority.getAuthority().substring(5)) // Remove "ROLE_" prefix
+                .orElse("USER"); // Default to "USER" if no role is found
+
+        // Add role to extra claims
+        extraClaims.put("role", role);  // Add the role as a claim
+
         return buildToken(extraClaims, userDetails, jwtExpiration);
     }
 
