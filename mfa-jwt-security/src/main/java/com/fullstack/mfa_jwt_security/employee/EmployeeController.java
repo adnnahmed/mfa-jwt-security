@@ -5,12 +5,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.crypto.IllegalBlockSizeException;
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin("http//localhost:4200")
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/management")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
@@ -22,7 +23,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/save-employee")
-    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
+    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) throws IllegalBlockSizeException {
         Employee savedEmployee = employeeService.save(employee);
         return new ResponseEntity<>(savedEmployee, HttpStatus.OK);
     }
@@ -34,7 +35,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/update-employee/{id}")
-    public ResponseEntity<Employee> updateEmployee(@PathVariable("id") Long id, @RequestBody Employee employee) {
+    public ResponseEntity<Employee> updateEmployee(@PathVariable("id") Long id, @RequestBody Employee employee) throws IllegalBlockSizeException {
         Employee updatedEmployee = employeeService.update(id, employee);
         return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
     }

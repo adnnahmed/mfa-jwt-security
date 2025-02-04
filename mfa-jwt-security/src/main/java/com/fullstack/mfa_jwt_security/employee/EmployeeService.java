@@ -6,7 +6,7 @@ import java.util.List;
 public interface EmployeeService {
 
     List<Employee> findAll();
-    Employee save(Employee employee) throws IllegalBlockSizeException;
+    Employee save(Employee employee);
     Employee findById(Long id);
     Employee update(Long id, Employee employee);
     void delete(Long id);

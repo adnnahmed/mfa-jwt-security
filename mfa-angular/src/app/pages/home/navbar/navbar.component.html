@@ -2,13 +2,13 @@
     <span routerLink="/home" class="pointer">Employee Application</span>
 
     <!-- Left-aligned buttons -->
-    <button mat-button routerLink="/create-employee">Create Employee</button>
-    <button mat-button routerLink="/employee-list">Employee List</button>
     <button mat-button routerLink="/dashboard">Dashboard</button>
-
+    <button mat-button routerLink="/employee-list">Employee List</button>
+    <button mat-button routerLink="/create-employee">Create Employee</button>
+    
     <!-- Right-aligned logout button -->
     <span class="spacer"></span>
     <button mat-icon-button (click)="openLogoutDialog()">
-        <mat-icon matTooltip="Logout">exit_to_app</mat-icon>
+        <mat-icon>exit_to_app</mat-icon>
     </button>
 </mat-toolbar>

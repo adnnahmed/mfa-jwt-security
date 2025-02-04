@@ -5,6 +5,7 @@ import com.fullstack.mfa_jwt_security.mfa.MultipleFactorAuthenticationService;
 import com.fullstack.mfa_jwt_security.token.Token;
 import com.fullstack.mfa_jwt_security.token.TokenRepository;
 import com.fullstack.mfa_jwt_security.token.TokenType;
+import com.fullstack.mfa_jwt_security.user.Role;
 import com.fullstack.mfa_jwt_security.user.User;
 import com.fullstack.mfa_jwt_security.user.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -35,21 +36,28 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
 
     public AuthenticationResponse register(RegisterRequest request) {
+        Role userRole = request.getRole() != null ? request.getRole() : USER;
+
         User user = User.builder()
                 .firstname(request.getFirstname())
                 .lastname(request.getLastname())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(USER)
+                .role(userRole)
                 .mfaEnabled(request.isMfaEnabled())
                 .build();
+
         if (request.isMfaEnabled()) {
             user.setSecret(mfaService.generateNewSecret());
         }
+
         User savedUser = userRepository.save(user);
+
         String jwtToken = jwtService.generateToken(user);
         String refreshToken = jwtService.generateRefreshToken(user);
+
         saveUserToken(savedUser, jwtToken);
+
         return AuthenticationResponse.builder()
                 .secretImageUri(mfaService.generateQrImageUri(user.getSecret()))
                 .accessToken(jwtToken)

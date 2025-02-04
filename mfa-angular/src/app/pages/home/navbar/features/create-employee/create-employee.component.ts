@@ -38,7 +38,7 @@ export class CreateEmployeeComponent implements OnInit {
 
   onSubmit(): void {
     if(this.employeeForm.valid) {
-      if (this.data) {
+      if (this.data && this.data.id) {
         this._employeeService.updateEmployee(this.data.id, this.employeeForm.value).subscribe({
           next: (value: any) => {
             console.log(value);

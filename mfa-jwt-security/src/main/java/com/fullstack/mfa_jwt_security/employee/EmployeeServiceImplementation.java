@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.crypto.IllegalBlockSizeException;
 import java.util.List;
+import java.util.Objects;
 
 import static org.apache.commons.lang3.StringUtils.isNumeric;
 
@@ -20,8 +21,8 @@ public class EmployeeServiceImplementation implements EmployeeService {
     }
 
     @Override
-    public Employee save(Employee employee) throws IllegalBlockSizeException {
-        String input = employee.getSalary();
+    public Employee save(Employee employee) {
+        /*String input = employee.getSalary();
         String modifiedSalary = "";
 
         if (isNumeric(input)) {
@@ -35,6 +36,7 @@ public class EmployeeServiceImplementation implements EmployeeService {
         } else {
             throw new NumberFormatException();
         }
+        */
 
         // employee.setSalary(encryptSalary(modifiedSalary));
         employeeRepository.save(employee);
@@ -43,7 +45,7 @@ public class EmployeeServiceImplementation implements EmployeeService {
 
     @Override
     public Employee findById(Long id) {
-        if (employeeRepository.findById(id).isPresent()) {
+        /*if (employeeRepository.findById(id).isPresent()) {
             EmployeeDetails actualDetails = employeeRepository.findById(id).get();
             String fakeSalary = actualDetails.getSalary();
             String decryptedSalary = decryptSalary(fakeSalary);
@@ -62,16 +64,35 @@ public class EmployeeServiceImplementation implements EmployeeService {
             return actualDetails;
         } else {
             return null;
+        }*/
+        if (employeeRepository.findById(id).isEmpty()) {
+            throw new EmployeeNotFoundException(id);
         }
+        return employeeRepository.findById(id).get();
     }
 
     @Override
     public Employee update(Long id, Employee employee) {
-        return null;
+        Employee updatedEmployee = findById(id);
+        if (Objects.nonNull(employee.getName()) && !"".equalsIgnoreCase(employee.getName())) {
+            updatedEmployee.setName(employee.getName());
+        }
+        if (Objects.nonNull(employee.getDesignation()) && !"".equalsIgnoreCase(employee.getDesignation())) {
+            updatedEmployee.setDesignation(employee.getDesignation());
+        }
+        if (Objects.nonNull(employee.getSalary()) && !"".equalsIgnoreCase(employee.getSalary())) {
+            updatedEmployee.setSalary(employee.getSalary());
+        }
+
+        return save(updatedEmployee);
     }
 
     @Override
     public void delete(Long id) {
-
+        if (employeeRepository.findById(id).isEmpty()) {
+            throw new EmployeeNotFoundException(id);
+        }
+        Employee employee = employeeRepository.findById(id).get();
+        employeeRepository.delete(employee);
     }
 }
